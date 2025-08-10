@@ -5,6 +5,7 @@ function eulerTotient(n) {
         if (n % i == 0) factorList.push(i);
     }
 
+    // 1 integer share 1 as a common factor with n so it added directly
     let count = 1;
     let bool = true;
     for (let i = 2; i <= n; i++) {
@@ -14,7 +15,10 @@ function eulerTotient(n) {
                 bool = false;
             }
         }
-        if (bool) count++;
+        if (bool) {
+            console.log(i);
+            count++;
+        }
     }
     return count;
 }
